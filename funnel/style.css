@@ -1,0 +1,92 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #f6f9fc;
+    color: #222;
+}
+.hero {
+    background: linear-gradient(120deg, #00c6fb 0%, #005bea 100%);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px 40px 20px;
+}
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+}
+.cta {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.8em 2em;
+    background: #fff;
+    color: #005bea;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s;
+}
+.cta:hover {
+    background: #005bea;
+    color: #fff;
+}
+.about, .community, .signup {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.features {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.features > div {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+}
+.signup form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.signup input[type="email"] {
+    padding: 0.7em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+}
+.signup button {
+    padding: 0.7em 1.5em;
+    background: #00c6fb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.signup button:hover {
+    background: #005bea;
+}
+footer {
+    text-align: center;
+    padding: 30px 10px 10px 10px;
+    background: #eaf1fb;
+    color: #555;
+    font-size: 1em;
+}
+.social a {
+    color: #005bea;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.social a:hover {
+    text-decoration: underline;
+}
