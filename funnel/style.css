@@ -3,51 +3,158 @@ body {
     margin: 0;
     background: #f6f9fc;
     color: #222;
+    line-height: 1.6;
 }
 .hero {
-    background: linear-gradient(120deg, #00c6fb 0%, #005bea 100%);
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px 40px 20px;
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
-.hero h1 {
-    font-size: 3em;
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) blur(1px);
+}
+.hero-bg .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, #00c6fb88 0%, #005bea88 100%);
+    z-index: 2;
+}
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+}
+.hero-content h1 {
+    font-size: 3.5em;
     margin-bottom: 0.2em;
+    letter-spacing: 2px;
+}
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 1em;
 }
 .cta {
     display: inline-block;
     margin-top: 1em;
-    padding: 0.8em 2em;
+    padding: 1em 2.5em;
     background: #fff;
     color: #005bea;
     border-radius: 30px;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    font-size: 1.1em;
     transition: background 0.2s, color 0.2s;
 }
 .cta:hover {
     background: #005bea;
     color: #fff;
 }
-.about, .community, .signup {
-    max-width: 800px;
+.about, .community, .signup, .how-it-works, .testimonials, .faq {
+    max-width: 900px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 30px 20px;
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
 .features {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 30px;
 }
 .features > div {
     flex: 1;
-    min-width: 200px;
+    min-width: 220px;
     padding: 10px;
+    text-align: center;
+}
+.feature-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.how-it-works ol {
+    padding-left: 20px;
+    font-size: 1.1em;
+}
+.community-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.community-grid > div {
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+}
+.community-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.testimonials {
+    background: linear-gradient(120deg, #eaf1fb 0%, #f6f9fc 100%);
+}
+.testimonial-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.testimonial-list blockquote {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 20px;
+    max-width: 350px;
+    font-style: italic;
+    color: #005bea;
+    position: relative;
+}
+.testimonial-list span {
+    display: block;
+    margin-top: 10px;
+    color: #222;
+    font-weight: bold;
+}
+.faq details {
+    margin-bottom: 15px;
+    background: #f6f9fc;
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.faq summary {
+    font-weight: bold;
+    cursor: pointer;
+    color: #005bea;
 }
 .signup form {
     display: flex;
@@ -60,6 +167,7 @@ body {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1em;
+    min-width: 220px;
 }
 .signup button {
     padding: 0.7em 1.5em;
@@ -76,17 +184,39 @@ body {
     background: #005bea;
 }
 footer {
-    text-align: center;
-    padding: 30px 10px 10px 10px;
     background: #eaf1fb;
     color: #555;
     font-size: 1em;
+    padding: 40px 10px 10px 10px;
 }
-.social a {
+.footer-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.footer-grid > div {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 20px;
+}
+.footer-grid h3 {
+    margin-bottom: 10px;
+    color: #005bea;
+}
+.footer-grid ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-grid ul li {
+    margin-bottom: 8px;
+}
+.footer-grid a {
     color: #005bea;
     text-decoration: none;
-    margin: 0 5px;
 }
-.social a:hover {
+.footer-grid a:hover {
     text-decoration: underline;
 }
